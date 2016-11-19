@@ -4,7 +4,7 @@ class TimeEntriesController < ApplicationController
   # GET /time_entries
   # GET /time_entries.json
   def index
-    @time_entries = TimeEntry.all
+    @time_entries = TimeEntry.includes(:project)
   end
 
   # GET /time_entries/1
