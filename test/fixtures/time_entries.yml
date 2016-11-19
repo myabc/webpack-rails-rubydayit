@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  begin_at: 2016-11-19 20:31:28
+  end_at: 2016-11-19 20:31:28
+  notes: MyText
+
+two:
+  project: two
+  begin_at: 2016-11-19 20:31:28
+  end_at: 2016-11-19 20:31:28
+  notes: MyText
