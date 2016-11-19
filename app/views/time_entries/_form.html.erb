@@ -1,4 +1,4 @@
-<%= form_for(time_entry) do |f| %>
+<%= form_for(time_entry, html: { class: "col s12" }) do |f| %>
   <% if time_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(time_entry.errors.count, "error") %> prohibited this time_entry from being saved:</h2>
@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :project_id %>
-    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+      <%= f.label :project_id %>
+    </div>
+    <div class="input-field col s3">
+      <%= f.datetime_field :begin_at %>
+      <%= f.label :begin_at, class: 'active' %>
+    </div>
+    <div class="input-field col s3">
+      <%= f.datetime_field :end_at %>
+      <%= f.label :end_at, class: 'active' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :begin_at %>
-    <%= f.datetime_select :begin_at %>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">comment</i>
+      <%= f.text_area :notes, class: 'materialize-textarea' %>
+      <%= f.label :notes, class: "#{'active' if time_entry.notes.present?}" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :end_at %>
-    <%= f.datetime_select :end_at %>
-  </div>
-
-  <div class="field">
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+    <%= f.submit class: 'btn' %>
   </div>
 <% end %>

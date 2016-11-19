@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <div class="card-panel">
+    <span class="blue-text text-darken-2"><%= notice %></span>
+  </div>
+<% end %>
 
-<h1>Time Entries</h1>
-
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Project</th>
@@ -16,11 +18,13 @@
   <tbody>
     <% @time_entries.each do |time_entry| %>
       <tr>
-        <td><%= time_entry.project.name %></td>
+        <td>
+          <span class="badge" style="background-color:<%= time_entry.project.colour %>">&nbsp;</span>
+          <%= time_entry.project.name %>
+        </td>
         <td><%= time_entry.begin_at %></td>
         <td><%= time_entry.end_at %></td>
         <td><%= time_entry.notes %></td>
-        <td><%= link_to 'Show', time_entry %></td>
         <td><%= link_to 'Edit', edit_time_entry_path(time_entry) %></td>
         <td><%= link_to 'Destroy', time_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -30,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Time Entry', new_time_entry_path %>
+<%= link_to 'New Time Entry', new_time_entry_path, class: 'btn' %>

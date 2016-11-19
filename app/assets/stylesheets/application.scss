@@ -14,4 +14,18 @@
  *= require_self
  */
 
+@import "materialize/components/color";
+$primary-color:   #5d4ca0 !default;
+$secondary-color: #38d59c !default;
+
 @import "materialize";
+
+body {
+  display:        flex;
+  min-height:     100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

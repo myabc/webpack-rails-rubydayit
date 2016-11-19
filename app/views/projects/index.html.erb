@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+  <div class="card-panel">
+    <span class="blue-text text-darken-2"><%= notice %></span>
+  </div>
+<% end %>
 
-<h1>Projects</h1>
-
-<table>
+<table class="highlight">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,8 +17,10 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.colour %></td>
-        <td><%= link_to 'Show', project %></td>
+        <td>
+          <span class="badge" style="background-color:<%= project.colour %>">&nbsp;</span>
+          <%= project.colour %>
+        </td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -26,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: 'btn' %>
