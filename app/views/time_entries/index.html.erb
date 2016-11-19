@@ -16,7 +16,7 @@
   <tbody>
     <% @time_entries.each do |time_entry| %>
       <tr>
-        <td><%= time_entry.project %></td>
+        <td><%= time_entry.project.name %></td>
         <td><%= time_entry.begin_at %></td>
         <td><%= time_entry.end_at %></td>
         <td><%= time_entry.notes %></td>
