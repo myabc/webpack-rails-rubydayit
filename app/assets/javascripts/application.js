@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require materialize-sprockets
+
+var onPageReady = function() {
+  $('select').material_select();
+};
+
+$(document).ready(onPageReady);
+$(document).on("turbolinks:load", onPageReady);
