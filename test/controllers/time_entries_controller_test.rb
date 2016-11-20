@@ -20,7 +20,7 @@ class TimeEntriesControllerTest < ActionDispatch::IntegrationTest
       post time_entries_url, params: { time_entry: { begin_at: @time_entry.begin_at, end_at: @time_entry.end_at, notes: @time_entry.notes, project_id: @time_entry.project_id } }
     end
 
-    assert_redirected_to time_entry_url(TimeEntry.last)
+    assert_redirected_to time_entries_url
   end
 
   test "should show time_entry" do
@@ -35,7 +35,7 @@ class TimeEntriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update time_entry" do
     patch time_entry_url(@time_entry), params: { time_entry: { begin_at: @time_entry.begin_at, end_at: @time_entry.end_at, notes: @time_entry.notes, project_id: @time_entry.project_id } }
-    assert_redirected_to time_entry_url(@time_entry)
+    assert_redirected_to time_entries_url
   end
 
   test "should destroy time_entry" do

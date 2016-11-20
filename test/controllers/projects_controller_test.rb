@@ -20,7 +20,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
       post projects_url, params: { project: { colour: @project.colour, name: @project.name } }
     end
 
-    assert_redirected_to project_url(Project.last)
+    assert_redirected_to projects_url
   end
 
   test "should show project" do
@@ -35,7 +35,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update project" do
     patch project_url(@project), params: { project: { colour: @project.colour, name: @project.name } }
-    assert_redirected_to project_url(@project)
+    assert_redirected_to projects_url
   end
 
   test "should destroy project" do
