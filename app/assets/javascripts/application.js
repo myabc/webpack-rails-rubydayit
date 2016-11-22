@@ -29,3 +29,10 @@ var onPageReady = function() {
 
 $(document).ready(onPageReady);
 $(document).on("turbolinks:load", onPageReady);
+
+class RubyDay {
+  constructor(date) {
+    this.presenters = [];
+    this.attendees  = [];
+  }
+}
