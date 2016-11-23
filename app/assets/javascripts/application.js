@@ -11,9 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+import jQuery from 'jquery';
 //= require jquery_ujs
+import 'jquery-ujs';
+
 //= require turbolinks
+import Turbolinks from 'turbolinks';
+Turbolinks.start();
+
 //= require materialize-sprockets
+import 'materialize-css';
+import './../stylesheets/application.scss';
 
 var onPageReady = function() {
   $('select').material_select();
