@@ -38,9 +38,7 @@ module.exports = {
     new ExtractTextPlugin("../stylesheets/application.css"),
     new webpack.LoaderOptionsPlugin({
       options: {
-        sassLoader: {
-          includePaths: [ path.resolve(__dirname, "./node_modules/materialize-css/sass") ]
-        }
+        sassLoader: {}
       }
     })
   ]
