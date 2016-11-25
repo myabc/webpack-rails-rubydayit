@@ -10,6 +10,7 @@ module.exports = {
     path:     path.join(__dirname, 'public', 'javascripts'),
     publicPath: '/javascripts/'
   },
+  devtool: 'sourcemap',
   module: {
     loaders: [
       {
