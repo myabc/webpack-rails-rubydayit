@@ -7,7 +7,8 @@ module.exports = {
   entry:  './app/assets/javascripts/application.js',
   output: {
     filename: 'application.js',
-    path:     path.join(__dirname, 'public', 'javascripts')
+    path:     path.join(__dirname, 'public', 'javascripts'),
+    publicPath: '/javascripts/'
   },
   module: {
     loaders: [
