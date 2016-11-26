@@ -14,11 +14,12 @@
  *= require_self
  */
 
-@import "materialize/components/color";
+@import "~materialize-css/sass/components/color";
 $primary-color:   #5d4ca0 !default;
 $secondary-color: #38d59c !default;
 
-@import "materialize";
+$roboto-font-path: "~materialize-css/fonts/roboto/";
+@import "~materialize-css/sass/materialize";
 
 body {
   display:        flex;
